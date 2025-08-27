@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAN Chat</title>
+    <link rel="stylesheet" href="../css/chat.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="user-info">
+                    <div class="user-avatar" id="currentUserAvatar">U</div>
+                    <div class="user-details">
+                        <h3 id="currentUserName">User</h3>
+                        <p id="currentUserDevice">Device</p>
+                    </div>
+                </div>
+                <div class="session-info">
+                    <div class="session-time">
+                        <span>Session Start:</span>
+                        <span id="sessionStart">--:--</span>
+                    </div>
+                    <div class="session-time">
+                        <span>Duration:</span>
+                        <span id="sessionDuration">00:00:00</span>
+                    </div>
+                    <div style="margin-top: 5px;">
+                        <strong>IP:</strong> <span id="sessionIP">---.---.---.---</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="peers-section">
+                <div class="section-header">
+                    <div class="section-title">Available Peers</div>
+                    <div class="peer-count" id="peerCount">0</div>
+                </div>
+                <div id="peersList">
+                    <div class="loading-peers">
+                        <div class="spinner"></div>
+                        <p>Discovering peers...</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="logout-btn" id="logoutBtn">
+                🚪 Leave Network
+            </button>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <div class="chat-title" id="chatTitle">Select a peer to start chatting</div>
+                <div class="chat-actions">
+                    <button class="btn btn-primary" id="refreshBtn">🔄 Refresh</button>
+                </div>
+            </div>
+
+            <!-- Messages Container -->
+            <div class="messages-container" id="messagesContainer">
+                <div class="no-messages">
+                    <div class="no-messages-icon">💭</div>
+                    <div>Select a peer from the sidebar to start a conversation</div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-container">
+                <div class="file-upload">
+                    <input type="file" id="fileInput">
+                    <div class="upload-btn" id="uploadBtn">
+                        📎
+                    </div>
+                </div>
+                <input type="text" class="message-input" id="messageInput" placeholder="Select a peer to start messaging..." disabled>
+                <button class="send-btn" id="sendBtn" disabled>
+                    ➤
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/chat.js"></script>
+</body>
+</html>
